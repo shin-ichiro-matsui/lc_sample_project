@@ -3,7 +3,7 @@ import 'package:lc_sample_project/models/values/hobby.dart';
 import 'package:lc_sample_project/models/values/input_model.dart';
 import 'package:lc_sample_project/models/values/profession.dart';
 import 'package:lc_sample_project/models/values/sex.dart';
-import 'package:lc_sample_project/widgets/page/input_confirm/input_confirm_headings.dart';
+import 'package:lc_sample_project/widgets/pages/input_confirm/input_confirm_headings.dart';
 import 'package:lc_sample_project/widgets/sample_app_text_styles.dart';
 import 'package:provider/provider.dart';
 

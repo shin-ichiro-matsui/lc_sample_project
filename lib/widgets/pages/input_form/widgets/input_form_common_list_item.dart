@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// 共通リストアイテム.
-class CommonListItem extends StatelessWidget {
-  const CommonListItem({
+/// 入力フォーム共通リストアイテム.
+class InputFormCommonListItem extends StatelessWidget {
+  const InputFormCommonListItem({
     super.key,
     required this.heading,
     required this.child,

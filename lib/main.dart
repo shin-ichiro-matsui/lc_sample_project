@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:lc_sample_project/models/values/input_model.dart';
-import 'package:lc_sample_project/widgets/page/input_form/input_form.dart';
-import 'package:lc_sample_project/widgets/page/input_form/input_form_page_notifier.dart';
+import 'package:lc_sample_project/widgets/pages/input_form/input_form.dart';
+import 'package:lc_sample_project/widgets/pages/input_form/input_form_page_notifier.dart';
 
 void main() {
   runApp(const MyApp());

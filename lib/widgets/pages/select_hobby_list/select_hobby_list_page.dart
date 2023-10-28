@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lc_sample_project/models/values/hobby.dart';
 import 'package:lc_sample_project/widgets/bottom_bar_button.dart';
-import 'package:lc_sample_project/widgets/page/select_hobby_list/widgets/select_hobby_list_item.dart';
+import 'package:lc_sample_project/widgets/pages/select_hobby_list/widgets/select_hobby_list_item.dart';
 
 /// 趣味設定リストページ.
+///
+/// StatefulWidgetで１画面つくる場合のサンプル。
 class SelectHobbyListPage extends StatefulWidget {
   const SelectHobbyListPage({
     super.key,

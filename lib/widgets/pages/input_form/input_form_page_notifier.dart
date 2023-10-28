@@ -11,11 +11,13 @@ class InputFormPageNotifier extends StateNotifier<InputModel> {
   InputFormPageNotifier({required InputModel state}) : super(state);
 
   // setter.
+  // 実際setterを使うよりはsetするためのメソッドを用意したほうが使いやすい。
+  // プロジェクトの方針によってsetterは扱わない方針を取っているところもある。
   set familyName(String value) => state = state.copyWith(familyName: value);
 
   set firstName(String value) => state = state.copyWith(firstName: value);
 
-  set sex(Sex value) => state = state.copyWith(sex: value);
+  set sex(Sex? value) => state = state.copyWith(sex: value);
 
   set telephoneNumber(String value) {
     if (value.isNotEmpty) {

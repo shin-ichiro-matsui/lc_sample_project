@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lc_sample_project/models/values/input_model.dart';
 import 'package:lc_sample_project/widgets/bottom_bar_button.dart';
-import 'package:lc_sample_project/widgets/page/input_confirm/input_confirm_page.dart';
+import 'package:lc_sample_project/widgets/pages/input_confirm/input_confirm_page.dart';
 import 'package:provider/provider.dart';
 
 /// 入力フォーム入力完了ボタン
@@ -30,12 +30,19 @@ class InputFormCompleteButton extends StatelessWidget {
             ? () {
                 if (isNameEntered) {
                   // 入力内容確認ページへ遷移
+                  // 入力ページで使用していたモデルクラスをそのまま受け渡している。
                   Navigator.of(context).push(
                     InputConfirmPage.pageRoute(
                       inputModel: context.read<InputModel>(),
                     ),
                   );
                 } else {
+                  // if (!context.mounted) {
+                  //   // 非同期処理でダイアログを表示する場合などはcontextのマウントが外れている場合がある。
+                  //   // そういった場合例外が発生するのでcontext.mountedでマウントされているか判定して
+                  //   // 回避コードを実装すると良い。
+                  //   return;
+                  // }
                   showDialog(
                     context: context,
                     // barrierDismissibleを指定すると画面外タップで閉じなくなる

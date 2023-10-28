@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 /// ボトムバーボタン.
+///
+/// アプリ内共通で扱う想定のWidgetの例。
 class BottomBarButton extends ElevatedButton {
   const BottomBarButton({
     required super.child,
@@ -42,7 +44,13 @@ class BottomBarButton extends ElevatedButton {
   }
 }
 
-enum ButtonType { complete, setting }
+/// ボタンタイプ.
+enum ButtonType {
+  /// 完了
+  complete,
+  /// 設定
+  setting,
+}
 
 extension ButtonTypeExtension on ButtonType {
   String get text {
