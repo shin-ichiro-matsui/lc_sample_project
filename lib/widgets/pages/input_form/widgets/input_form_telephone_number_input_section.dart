@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lc_sample_project/widgets/common_list_item.dart';
-import 'package:lc_sample_project/widgets/page/input_form/input_form_page_notifier.dart';
-import 'package:lc_sample_project/widgets/page/input_form/widgets/input_form_text_field.dart';
+import 'package:lc_sample_project/widgets/pages/input_form/input_form_page_notifier.dart';
+import 'package:lc_sample_project/widgets/pages/input_form/widgets/input_form_common_list_item.dart';
+import 'package:lc_sample_project/widgets/pages/input_form/widgets/input_form_text_field.dart';
 import 'package:lc_sample_project/widgets/sample_app_text_styles.dart';
 import 'package:provider/provider.dart';
 
-class InputFormTelephoneNumberRow extends StatelessWidget {
-  const InputFormTelephoneNumberRow({super.key});
+/// 入力フォーム電話番号入力セクション.
+class InputFormTelephoneNumberInputSection extends StatelessWidget {
+  const InputFormTelephoneNumberInputSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CommonListItem(
+    return InputFormCommonListItem(
       crossAxisAlignment: CrossAxisAlignment.start,
       heading: const Padding(
         padding: EdgeInsets.only(top: 20),

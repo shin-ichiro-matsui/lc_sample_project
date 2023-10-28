@@ -1,24 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:lc_sample_project/models/values/input_model.dart';
 import 'package:lc_sample_project/models/values/profession.dart';
-import 'package:lc_sample_project/widgets/common_list_item.dart';
-import 'package:lc_sample_project/widgets/page/input_form/input_form_page_notifier.dart';
+import 'package:lc_sample_project/widgets/pages/input_form/widgets/input_form_common_list_item.dart';
+import 'package:lc_sample_project/widgets/pages/input_form/input_form_page_notifier.dart';
 import 'package:lc_sample_project/widgets/rectangle_bordered_dropdown_button.dart';
 import 'package:lc_sample_project/widgets/sample_app_text_styles.dart';
 import 'package:provider/provider.dart';
 
-class InputFormProfessionRow extends StatelessWidget {
-  const InputFormProfessionRow({super.key});
-
-  static final List<Profession> professions = [
-    Profession.applicationEngineer,
-    Profession.webDirector,
-    Profession.webDesigner,
-    Profession.webProgrammer,
-    Profession.pornStar,
-    Profession.wiseMan,
-    Profession.wizard,
-  ];
+/// 入力フォーム職業選択セクション.
+class InputFormProfessionSelectSection extends StatelessWidget {
+  const InputFormProfessionSelectSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +17,17 @@ class InputFormProfessionRow extends StatelessWidget {
       (InputModel state) => state.profession,
     );
 
-    return CommonListItem(
+    return InputFormCommonListItem(
       heading: const Text(
         '職業',
         style: SampleAppTextStyles.main,
       ),
       child: RectangleBorderedDropdownButton<Profession>(
         value: selectedValue,
-        items: professions
+        // valuesでenumをListで取得
+        // => mapでenumの値を使用してDropdownMenuItemに変換
+        // => toListでList<DropdownMenuItem>の形式で返却
+        items: Profession.values
             .map(
               (e) => DropdownMenuItem<Profession>(
                 value: e,

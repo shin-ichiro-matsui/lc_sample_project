@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 /// 入力フォームで扱うテキスト入力フィールド.
+///
+/// デザインは適当。
 class InputFormTextField extends StatelessWidget {
   const InputFormTextField({
     super.key,
@@ -13,6 +15,8 @@ class InputFormTextField extends StatelessWidget {
   });
 
   /// ヒント.
+  ///
+  /// 入力フォームに表示するヒントテキストを外から設定するためのフィールド。
   final String hint;
 
   /// キーボードタイプ.
@@ -33,7 +37,9 @@ class InputFormTextField extends StatelessWidget {
 
   /// テキスト変更コールバック.
   ///
-  /// プログラムで変更された場合は呼び出されないので注意。
+  /// - 共通のWidgetを作る上でコールバックは外から設定する場合は多い。
+  /// - プログラムで入力テキストが変更された場合は呼び出されないので注意。
+  /// そういった実装がある場合は[TextEditingController]によるListenerパターンで実装する。
   final ValueChanged<String> onChanged;
 
   /// 最大文字数.
